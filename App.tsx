@@ -56,8 +56,8 @@ const App: React.FC = () => {
   const [isOpened, setIsOpened] = useState(false);
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
 
-  const brideImg = 'img/Bride.jpg';
-  const groomImg = 'img/Groom.jpg';
+  const brideImg = '/img/Bride.jpg';
+  const groomImg = '/img/Groom.jpg';
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
@@ -160,7 +160,7 @@ const App: React.FC = () => {
         {!isOpened && <Envelope onOpen={handleOpenInvitation} />}
       </AnimatePresence>
 
-      <audio ref={audioRef} loop src="music/song.mp3" />
+      <audio ref={audioRef} loop src="/music/song.mp3" />
 
       {isOpened && (
         <>
