@@ -1,0 +1,7 @@
+{
+  "name": "Elegance Digital Invitation",
+  "description": "A premium interactive wedding invitation featuring a digital envelope opening, countdown, parallax effects, and RSVP integration.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
