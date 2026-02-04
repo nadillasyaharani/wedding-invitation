@@ -161,7 +161,7 @@ const App: React.FC = () => {
         {!isOpened && <Envelope onOpen={handleOpenInvitation} />}
       </AnimatePresence>
 
-      <audio ref={audioRef} loop src="/music/song.mp3" />
+      <audio ref={audioRef} loop src="/music/song1.mp3" />
 
       {isOpened && (
         <>
