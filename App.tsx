@@ -244,14 +244,14 @@ const App: React.FC = () => {
                       </svg>
                     </div>
                     <div className="w-64 h-64  sm:w-80 sm:h-80 mx-auto overflow-hidden shadow-2xl relative z-10 watercolor-frame bg-white/80 p-2 ">
-                      <img src={brideImg} className="w-full h-full object-cover md:pr-5 md:ml-3 md:mt-3 pr-5 ml-3 mt-3" alt="Bride" />
+                      <img src={brideImg} className="w-full h-full object-cover " alt="Bride" />
                     </div>
                   </div>
                   <div className="space-y-4">
                     <InkSpreadTitle>
                       <h3 className="font-serif text-3xl sm:text-4xl text-[#3D5A80] font-bold">Sandika Dewi Rosalini</h3>
                     </InkSpreadTitle>
-                    <p className="text-[#4A6982] font-semibold text-lg uppercase tracking-widest leading-loose">Puteri dari <br />Bapak Soendoko <br /> & <br />Ibu Rosnani</p>
+                    <p className="text-[#4A6982] font-semibold text-lg uppercase tracking-widest leading-loose">Puteri dari <br /> (Alm.)Bapak Soendoko <br /> & <br />Ibu Rosnani</p>
                   </div>
                 </motion.div>
 
@@ -267,7 +267,7 @@ const App: React.FC = () => {
                       <path fill="#e5e7eb" d="M43.7,-64.5C53.7,-52.1,56.7,-37.2,60.8,-22.3C64.9,-7.5,70.1,7.3,65.8,20.4C61.4,33.4,47.5,44.7,33.5,52.2C19.5,59.7,5.4,63.4,-8.3,61C-22.1,58.6,-35.5,50.1,-46.8,38.8C-58.1,27.5,-67.2,13.4,-67.1,-0.8C-67,-15.1,-57.8,-29.4,-46.2,-41.8C-34.6,-54.2,-20.6,-64.7,-4.8,-62.9C11,-61.2,26.9,-57.2,43.7,-64.5Z" transform="translate(100 100)" />
                     </svg>
                     <div className="w-64 h-64 sm:w-80 sm:h-80 mx-auto overflow-hidden shadow-2xl relative z-10 watercolor-frame bg-white/80 p-2 ">
-                      <img src={groomImg} className="w-full h-full object-cover" alt="Groom" />
+                      <img src={groomImg} className="w-full h-full object-cover md:pr-5 md:ml-3 md:mt-10 pr-5 ml-3 mt-3 " alt="Groom" />
                     </div>
                   </div>
                   <div className="space-y-4">
