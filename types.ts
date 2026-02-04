@@ -3,6 +3,7 @@ export interface Wish {
   id: string;
   name: string;
   message: string;
+  attendance: 'hadir' | 'tidak_hadir' | null;
   timestamp: Date;
 }
 

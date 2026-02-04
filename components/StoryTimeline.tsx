@@ -13,7 +13,7 @@ interface StoryEvent {
 const stories: StoryEvent[] = [
   {
     date: "24 July 2025",
-    title: "*Nazhor & Taaruf*",
+    title: "*Perkenalan Awal*",
     description: "Takdir mempertemukan Bilal dan Sandika pada 24 Juli 2025, dalam ruang kerja dan niat yang sederhana. Sebuah pertemuan singkat yang berlalu, hingga waktu kembali mempertemukan mereka pada 16 Oktober 2025, melalui satu pekerjaan dan satu kesempatan.",
     image: "/img/story1.webp",
     color: "#3D5A80" // Dark Blue
@@ -26,7 +26,7 @@ const stories: StoryEvent[] = [
     color: "#F4C430" // Yellow/Amber
   },
   {
-    date: "30 Januari 2025",
+    date: "15 Februari 2026",
     title: "*Akad & Resepsi*",
     description: "Dengan izin Allah dan doa keluarga, lamaran pun terucap pada 30 Januari 2026. Hingga akhirnya, pada 15 Februari 2026, mereka memilih untuk berjalan bersama dalam ikatan suci pernikahan—menyatukan dua hati, dalam satu tujuan.",
     image: "/img/story3.webp",
