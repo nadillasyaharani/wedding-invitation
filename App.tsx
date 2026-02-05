@@ -1,5 +1,5 @@
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Heart, Volume2, VolumeX, Navigation, ChevronDown, Calendar } from 'lucide-react';
 import Envelope from './components/Envelope';
@@ -55,15 +55,37 @@ const InkSpreadTitle: React.FC<{ children: React.ReactNode, className?: string }
 const App: React.FC = () => {
   const [isOpened, setIsOpened] = useState(false);
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
+  const [userPaused, setUserPaused] = useState(false); // Track if user manually paused
 
   const brideImg = '/img/Bride.webp';
   const groomImg = '/img/Groom.webp';
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
+  // Logic: Pause music when tab is hidden, resume when visible (if it was playing before)
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        // Tab hidden -> pause audio regardless of state
+        if (audioRef.current && !audioRef.current.paused) {
+          audioRef.current.pause();
+        }
+      } else {
+        // Tab visible -> resume only if it was opened AND user didn't manually pause
+        if (isOpened && isMusicPlaying && !userPaused && audioRef.current) {
+          audioRef.current.play().catch(e => console.log("Auto-play blocked:", e));
+        }
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    return () => document.removeEventListener('visibilitychange', handleVisibilityChange);
+  }, [isOpened, isMusicPlaying, userPaused]);
+
   const handleOpenInvitation = () => {
     setIsOpened(true);
     setIsMusicPlaying(true);
+    setUserPaused(false);
     if (audioRef.current) {
       audioRef.current.play().catch(e => console.log(e));
     }
@@ -71,12 +93,17 @@ const App: React.FC = () => {
 
   const toggleMusic = () => {
     if (audioRef.current) {
-      if (isMusicPlaying) audioRef.current.pause();
-      else audioRef.current.play().catch(e => console.log(e));
+      if (isMusicPlaying) {
+        audioRef.current.pause();
+        setUserPaused(true);
+      } else {
+        audioRef.current.play().catch(e => console.log(e));
+        setUserPaused(false);
+      }
       setIsMusicPlaying(!isMusicPlaying);
     }
   };
-
+  
   return (
     <div className="relative min-h-screen">
       <style>{`
@@ -315,7 +342,7 @@ const App: React.FC = () => {
 
             {/* DETAILS */}
             <section className="py-24 sm:py-48 px-6 relative bg-[#FAF9F6]/20">
-              
+
               <div className="max-w-5xl mx-auto text-center space-y-24 relative z-10">
                 <div className="space-y-6">
                   <InkSpreadTitle>
@@ -369,7 +396,7 @@ const App: React.FC = () => {
 
             {/* GALLERY */}
             <section className="pt-24 sm:pt-48 pb-12 sm:pb-20 relative">
-            
+
               <div className="text-center  space-y-6">
                 <InkSpreadTitle>
                   <div className="text-center mb-16 space-y-4">
@@ -383,7 +410,7 @@ const App: React.FC = () => {
 
             {/* WEDDING GIFT SECTION - Tighter top spacing */}
             <section className="pt-12 sm:pt-20 pb-24 sm:pb-32 px-6 relative overflow-hidden">
-            
+
               <div className="max-w-4xl mx-auto space-y-24 sm:space-y-32 relative z-10">
                 <WeddingGift />
                 <div className="space-y-16">
