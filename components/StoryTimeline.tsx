@@ -23,14 +23,14 @@ const stories: StoryEvent[] = [
     title: "*Khitbah*",
     description: "Dari komunikasi yang awalnya profesional, tumbuh rasa yang menguatkan. Pada 3 November 2025, Bilal menyampaikan niatnya untuk melangkah lebih jauh, dengan restu orang tua sebagai landasan.",
     image: "/img/story2.webp",
-    color: "#F4C430" // Yellow/Amber
+    color: "#214677" // Dark Blue 2
   },
   {
     date: "15 Februari 2026",
-    title: "*Akad & Resepsi*",
+    title: "*Memantapkan Langkah* #BiSaBahagiaSelamanya",
     description: "Dengan izin Allah dan doa keluarga, lamaran pun terucap pada 30 Januari 2026. Hingga akhirnya, pada 15 Februari 2026, mereka memilih untuk berjalan bersama dalam ikatan suci pernikahan—menyatukan dua hati, dalam satu tujuan.",
     image: "/img/story3.webp",
-    color: "#D65A6F" // Red/Pink
+    color: "#15355f" // Dark Blue 3
   }
 ];
 
@@ -39,9 +39,58 @@ const StoryTimeline: React.FC = () => {
     <div className="max-w-4xl mx-auto px-6 py-12">
 
 
-      <div className="relative">
-        {/* Vertical Line */}
-        <div className="absolute left-1/2 top-0 bottom-0 w-px bg-[#3D5A80]/20 -translate-x-1/2 hidden md:block" />
+        <div className="flex-1 w-full relative z-10">
+          {/* Vertical Line */}
+          <div className="absolute left-1/2 top-0 bottom-0 w-px bg-[#3D5A80]/20 -translate-x-1/2 hidden md:block" />
+
+          {/* ORNAMEN SISI KANAN (desktop only) */}
+          <img
+            src="/ornaments/add-perkenalan-right.svg"
+            alt=""
+            aria-hidden
+            className="
+              pointer-events-none
+              absolute
+              right-[-120px]
+              top-[0px]
+              w-[clamp(650px,26vw,460px)]
+              opacity-60
+              hidden md:block
+            "
+          />
+
+            {/* ORNAMEN SISI KIRI (optional biar balance, mirror) */}
+            <img
+              src="/ornaments/add-lamaran-right.svg"
+              alt=""
+              aria-hidden
+              className="
+                pointer-events-none
+                absolute
+                left-[-40px]
+                top-[650px]
+                w-[clamp(650px,26vw,460px)]
+                opacity-35
+                hidden md:block
+                scale-x-[-1]
+              "
+              />
+            {/* ORNAMEN SISI KANAN PART 2 */}
+            <img
+              src="/ornaments/add-khitbah-right.svg"
+              alt=""
+              aria-hidden
+              className="
+                pointer-events-none
+                absolute
+                right-[-200px]
+                top-[1200px]
+                w-[clamp(650px,26vw,460px)]
+                opacity-35
+                hidden md:block
+              "
+              />
+              
 
         <div className="space-y-12 md:space-y-24">
           {stories.map((story, index) => (

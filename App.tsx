@@ -181,7 +181,29 @@ const App: React.FC = () => {
           >
             {/* HERO */}
             <section className="h-screen flex flex-col items-center justify-center relative px-6 text-center overflow-hidden">
-              <div className="relative z-10 space-y-12">
+              {/* ORNAMEN KIRI */}
+              <img
+              src="/ornaments/name-frame-left.svg"
+              alt=""
+              aria-hidden
+              className="
+               pointer-events-none absolute left-0 top-1/2 -translate-y-1/2
+               w-[clamp(1200px,18vw,180px)] opacity-80
+              "
+            />
+            
+            {/* ORNAMEN KANAN (mirror) */}
+            <img
+            src="/ornaments/name-frame-left.svg"
+             alt=""
+             aria-hidden
+             className="
+              pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 scale-x-[-1]
+              w-[clamp(1200px,18vw,180px)] opacity-80
+             "
+            />
+
+              <div className="relative z-10 space-y-12 px-[clamp(56px,12vw,140px)]">
                 <span className="uppercase tracking-[0.8em] text-[#3D5A80] text-[10px] font-bold opacity-60">The Wedding Celebration</span>
 
                 <InkSpreadTitle>
@@ -200,6 +222,7 @@ const App: React.FC = () => {
                   <Countdown targetDate="2026-02-15T08:00:00" />
                 </motion.div>
               </div>
+            
 
               <motion.div
                 animate={{ y: [0, 15, 0] }}
@@ -211,23 +234,33 @@ const App: React.FC = () => {
             </section>
 
             {/* QUOTE */}
-            <section className="py-24 sm:py-48 px-6 relative">
-              <div className="max-w-4xl mx-auto text-center space-y-12 relative z-10">
+            <section className="py-6 sm:py-8 px-6 relative">
+              <div className="max-w-4xl mx-auto text-center space-y-6 relative z-10">
                 <Heart className="mx-auto text-[#98C1D9] opacity-40" size={32} />
                 <InkSpreadTitle>
                   <p className="text-[#3D5A80] italic font-serif text-3xl md:text-5xl leading-relaxed px-6">
                     Di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan hidup dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya.
                   </p>
-                  <p className="text-[#3D5A80] mt-5 italic font-serif text-3xl md:text-3xl leading-relaxed px-6 opacity-60">
+                  <p className="text-[#3D5A80] mt-2 italic font-serif text-3xl md:text-3xl leading-relaxed px-6 opacity-60">
                     "QS. Ar-Rum ayat 21"
                   </p>
+                      <img src="/ornaments/page-break-bird-and-flowers.svg" 
+                      alt=""
+                      style={{
+                        display: "block",
+                        margin: "8px auto 0",
+                        width: "clamp(1200px, 30vw, 240px)",
+                        height: "auto",
+                        opacity: 1,
+                      }}
+                      />
+
                 </InkSpreadTitle>
-                <div className="w-24 h-px bg-[#3D5A80]/20 mx-auto" />
               </div>
             </section>
 
             {/* PROFILE */}
-            <section className="py-24 sm:py-48 px-6 relative overflow-hidden bg-white/10 backdrop-blur-[1px]">
+            <section className="px-6 relative overflow-hidden bg-white/10 backdrop-blur-[1px] mt-0">
 
               <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-32 relative">
                 <motion.div
@@ -251,7 +284,7 @@ const App: React.FC = () => {
                     <InkSpreadTitle>
                       <h3 className="font-serif text-3xl sm:text-4xl text-[#3D5A80] font-bold">Sandika Dewi Rosalini</h3>
                     </InkSpreadTitle>
-                    <p className="text-[#4A6982] font-semibold text-lg uppercase tracking-widest leading-loose">Puteri dari <br /> (Alm.)Bapak Soendoko <br /> & <br />Ibu Rosnani</p>
+                    <p className="text-[#4A6982] font-semibold text-lg uppercase tracking-widest leading-loose">Putri dari <br /> (Alm.)Bapak Soendoko <br /> & <br />Ibu Rosnani</p>
                   </div>
                 </motion.div>
 
@@ -274,7 +307,7 @@ const App: React.FC = () => {
                     <InkSpreadTitle>
                       <h3 className="font-serif text-3xl sm:text-4xl text-[#3D5A80] font-bold">Bilal Abdul Qowy</h3>
                     </InkSpreadTitle>
-                    <p className="text-[#4A6982] font-semibold text-lg uppercase tracking-widest leading-loose">Putera dari <br /> Bapak Hanan Munthaha <br /> & <br /> Ibu Hambar Pangesti</p>
+                    <p className="text-[#4A6982] font-semibold text-lg uppercase tracking-widest leading-loose">Putra dari <br /> Bapak Hanan Munthaha <br /> & <br /> Ibu Hambar Pangesti</p>
                   </div>
                 </motion.div>
               </div>
