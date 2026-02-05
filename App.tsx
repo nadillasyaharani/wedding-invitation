@@ -57,8 +57,8 @@ const App: React.FC = () => {
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
   const [userPaused, setUserPaused] = useState(false); // Track if user manually paused
 
-  const brideImg = '/img/bride.jpg';
-  const groomImg = '/img/groom.jpg';
+  const brideImg = '/img/Bride.webp';
+  const groomImg = '/img/Groom.webp';
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
